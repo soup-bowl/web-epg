@@ -3,6 +3,7 @@ export type MenuItem = {
   number: string
   label: string
   route: string
+  description?: string
 }
 
 export type MenuData = {

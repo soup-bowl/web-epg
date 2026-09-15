@@ -19,7 +19,7 @@ export default function MenuList({ items }: MenuListProps) {
   }, [items])
 
   const activate = (item: MenuItemData) => {
-    navigate(item.route, { state: { label: item.label } })
+    navigate(item.route, { state: { label: item.label, description: item.description } })
   }
 
   const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {

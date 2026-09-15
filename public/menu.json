@@ -1,6 +1,12 @@
 {
   "items": [
-    { "id": "all-channels", "number": "1", "label": "ALL CHANNELS", "route": "/all-channels" },
+    {
+      "id": "all-channels",
+      "number": "1",
+      "label": "ALL CHANNELS",
+      "route": "/all-channels",
+      "description": "This section lists every channel in number order. Use the up and down arrows to move through the list, then press SELECT to view a channel."
+    },
     { "id": "entertainment", "number": "2", "label": "ENTERTAINMENT", "route": "/entertainment" },
     { "id": "lifestyle-culture", "number": "3", "label": "LIFESTYLE & CULTURE", "route": "/lifestyle-culture" },
     { "id": "movies", "number": "4", "label": "MOVIES", "route": "/movies" },
