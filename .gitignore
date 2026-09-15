@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Project
+public/bgm/*.mp3
+public/bgm/playlist.json
