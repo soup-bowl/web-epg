@@ -1,0 +1,8 @@
+{
+	"name": "Sky",
+	"image": "mcr.microsoft.com/devcontainers/base:resolute",
+	"features": {
+		"ghcr.io/devcontainers/features/node:2": {}
+	},
+	"forwardPorts": [5173]
+}
