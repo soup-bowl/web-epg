@@ -7,4 +7,4 @@ dist-ssr
 *.local
 *.log
 public/bgm/*.mp3
-public/bgm/playlist.json
+public/playlist.json

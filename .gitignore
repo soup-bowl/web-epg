@@ -25,4 +25,4 @@ dist-ssr
 
 # Project
 public/bgm/*.mp3
-public/bgm/playlist.json
+public/playlist.json

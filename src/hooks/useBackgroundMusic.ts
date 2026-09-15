@@ -46,7 +46,7 @@ function boot() {
   }
   booted = true
 
-  void fetch(publicUrl('/bgm/playlist.json'))
+  void fetch(publicUrl('/playlist.json'))
     .then((response) => {
       if (!response.ok) {
         throw new Error('Could not load playlist')
