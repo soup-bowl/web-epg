@@ -9,7 +9,17 @@
     },
     { "id": "entertainment", "number": "2", "label": "ENTERTAINMENT", "route": "/entertainment" },
     { "id": "lifestyle-culture", "number": "3", "label": "LIFESTYLE & CULTURE", "route": "/lifestyle-culture" },
-    { "id": "movies", "number": "4", "label": "MOVIES", "route": "/movies" },
+    {
+      "id": "movies",
+      "number": "4",
+      "label": "MOVIES",
+      "route": "/movies",
+      "description": "New films every Friday, plus a library of movies across Sky Movies channels.",
+      "link": {
+        "label": "BOX OFFICE",
+        "route": "/box-office"
+      }
+    },
     { "id": "sports", "number": "5", "label": "SPORTS", "route": "/sports" },
     { "id": "news", "number": "6", "label": "NEWS", "route": "/news" },
     { "id": "documentaries", "number": "7", "label": "DOCUMENTARIES", "route": "/documentaries" },

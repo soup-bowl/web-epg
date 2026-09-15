@@ -2,25 +2,41 @@ import { useEffect, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 import type { MenuData, MenuItem } from '../types.ts'
 import DetailsPage from './DetailsPage.tsx'
+import LinkPage from './LinkPage.tsx'
 import PlaceholderPage from './PlaceholderPage.tsx'
 
 type LocationState = {
   label?: string
   description?: string
+  link?: MenuItem['link']
 }
 
-type ResolvedItem = Pick<MenuItem, 'label' | 'description'>
+type ResolvedItem = Pick<MenuItem, 'label' | 'description' | 'link'>
+
+function pageForItem(item: ResolvedItem) {
+  if (item.link) {
+    return <LinkPage title={item.label} description={item.description} link={item.link} />
+  }
+
+  if (item.description) {
+    return <DetailsPage title={item.label} description={item.description} />
+  }
+
+  return <PlaceholderPage />
+}
 
 export default function ItemRoute() {
   const { itemId } = useParams()
   const location = useLocation()
   const state = (location.state as LocationState | null) ?? null
   const itemFromState: ResolvedItem | null =
-    state?.label != null ? { label: state.label, description: state.description } : null
+    state?.label != null
+      ? { label: state.label, description: state.description, link: state.link }
+      : null
   const [fetched, setFetched] = useState<{ itemId: string; item: ResolvedItem | null } | null>(null)
 
   useEffect(() => {
-    if (state?.label != null || !itemId) {
+    if (!itemId) {
       return
     }
 
@@ -38,7 +54,9 @@ export default function ItemRoute() {
         if (!cancelled) {
           setFetched({
             itemId,
-            item: match ? { label: match.label, description: match.description } : null,
+            item: match
+              ? { label: match.label, description: match.description, link: match.link }
+              : null,
           })
         }
       })
@@ -51,16 +69,24 @@ export default function ItemRoute() {
     return () => {
       cancelled = true
     }
-  }, [itemId, state?.label, state?.description])
+  }, [itemId])
 
-  const item = itemFromState ?? (fetched && fetched.itemId === itemId ? fetched.item : undefined)
+  const fetchedItem = fetched && fetched.itemId === itemId ? fetched.item : undefined
 
-  if (item === undefined) {
+  if (itemFromState?.link || itemFromState?.description) {
+    return pageForItem(itemFromState)
+  }
+
+  if (fetchedItem === undefined) {
     return null
   }
 
-  if (item?.description) {
-    return <DetailsPage title={item.label} description={item.description} />
+  if (fetchedItem) {
+    return pageForItem(fetchedItem)
+  }
+
+  if (itemFromState) {
+    return pageForItem(itemFromState)
   }
 
   return <PlaceholderPage />
