@@ -1,0 +1,17 @@
+.guide-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-page__main {
+  flex: 1;
+  padding: 1.5rem 1.5rem 3rem;
+}
+
+.guide-page__status {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  font-size: 1.4rem;
+  font-weight: 600;
+}

@@ -1,0 +1,73 @@
+:root {
+  font-size: 16px;
+  --font-colour: white;
+  --main-colour: rgb(0, 37, 201);
+  --sub-colour: rgb(0, 26, 143);
+  --listnum-colour: rgb(126, 126, 255);
+  --main-colour-hover: #fcda44;
+  --sub-colour-hover: #fec200;
+  --listnum-colour-hover: rgb(0, 0, 179);
+  --font-colour-hover: rgb(0, 0, 179);
+  --bg-color: #6fc4e2;
+  --bg-image: url('/sky-guide-background.svg');
+  --header-muted: rgba(255, 255, 255, 0.55);
+  --header-active: #ffffff;
+  --font: 'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+  --font-menu: 'Zurich Bold Condensed', 'Arial Narrow', sans-serif;
+}
+
+@font-face {
+  font-family: 'Zurich Bold Condensed';
+  src: url('/Zurich Bold Extended.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  background-color: var(--bg-color);
+}
+
+body {
+  font-family: var(--font);
+  color: var(--font-colour);
+  background-color: transparent;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.app-shell {
+  min-height: 100%;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
