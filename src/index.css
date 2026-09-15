@@ -1,13 +1,27 @@
 :root {
+  font-size: 16px;
+  --font-colour: white;
+  --main-colour: rgb(0, 37, 201);
+  --sub-colour: rgb(0, 26, 143);
+  --listnum-colour: rgb(126, 126, 255);
+  --main-colour-hover: #fcda44;
+  --sub-colour-hover: #fec200;
+  --listnum-colour-hover: rgb(0, 0, 179);
+  --font-colour-hover: rgb(0, 0, 179);
   --bg-color: #6fc4e2;
   --bg-image: url('/sky-guide-background.svg');
-  --menu-blue: #1c4f9e;
-  --menu-yellow: #f5c400;
-  --text-on-blue: #ffffff;
-  --text-on-yellow: #163a78;
   --header-muted: rgba(255, 255, 255, 0.55);
   --header-active: #ffffff;
   --font: 'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+  --font-menu: 'Zurich Bold Condensed', 'Arial Narrow', sans-serif;
+}
+
+@font-face {
+  font-family: 'Zurich Bold Condensed';
+  src: url('/Zurich Bold Extended.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 *,
@@ -25,7 +39,7 @@ body,
 
 body {
   font-family: var(--font);
-  color: var(--text-on-blue);
+  color: var(--font-colour);
   background-color: var(--bg-color);
 }
 

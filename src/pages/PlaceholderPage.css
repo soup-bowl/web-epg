@@ -30,13 +30,13 @@
   font-size: 1.25rem;
   font-weight: 600;
   text-decoration: none;
-  background: var(--menu-yellow);
-  color: var(--text-on-yellow);
+  background: var(--main-colour-hover);
+  color: var(--font-colour-hover);
   padding: 0.45rem 1.25rem;
 }
 
 .placeholder-page__back:hover,
 .placeholder-page__back:focus-visible {
-  outline: 2px solid var(--text-on-yellow);
+  outline: 2px solid var(--font-colour-hover);
   outline-offset: 3px;
 }

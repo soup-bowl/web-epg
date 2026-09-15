@@ -1,36 +1,48 @@
 .menu-item {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   width: 100%;
   min-width: 0;
   margin: 0;
-  padding: 0.55rem 1rem;
+  padding: 0;
   border: 0;
-  background: var(--menu-blue);
-  color: var(--text-on-blue);
+  background: var(--main-colour);
+  color: var(--font-colour);
+  font-family: var(--font-menu);
   text-align: left;
   cursor: pointer;
 }
 
 .menu-item.is-selected {
-  background: var(--menu-yellow);
-  color: var(--text-on-yellow);
+  background: var(--main-colour-hover);
+  color: var(--font-colour-hover);
 }
 
 .menu-item__number {
   flex: 0 0 2.25rem;
-  font-size: 1.65rem;
+  display: flex;
+  align-items: center;
+  padding: 0.55rem 1rem 0.55rem 1rem;
+  background: var(--sub-colour);
+  color: var(--listnum-colour);
+  font-size: 1.6rem;
   font-weight: 700;
   line-height: 1;
+}
+
+.menu-item.is-selected .menu-item__number {
+  background: var(--sub-colour-hover);
+  color: var(--listnum-colour-hover);
 }
 
 .menu-item__label {
   flex: 1 1 auto;
   min-width: 0;
+  padding: 0.55rem 1rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 1.65rem;
+  font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   line-height: 1.15;
