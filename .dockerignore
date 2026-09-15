@@ -1,0 +1,10 @@
+.git
+.github
+.vscode
+node_modules
+dist
+dist-ssr
+*.local
+*.log
+public/bgm/*.mp3
+public/bgm/playlist.json
