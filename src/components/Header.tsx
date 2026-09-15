@@ -1,5 +1,6 @@
 import useActiveTab from '../hooks/useActiveTab.ts'
 import useMenuData from '../hooks/useMenuData.ts'
+import publicUrl from '../publicUrl.ts'
 import TabIcon from './TabIcon.tsx'
 import './Header.css'
 
@@ -11,7 +12,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header__logo">
-        <img src="/logo.svg" alt="Sky Guide" />
+        <img src={publicUrl('/logo.svg')} alt="Sky Guide" />
       </div>
       <nav className="header__tabs" aria-label="Guide sections">
         {tabs.map((tab) => {

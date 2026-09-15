@@ -9,7 +9,7 @@
   --listnum-colour-hover: rgb(0, 0, 179);
   --font-colour-hover: rgb(0, 0, 179);
   --bg-color: #6fc4e2;
-  --bg-image: url('/sky-guide-background.svg');
+  --bg-image: url('./assets/sky-guide-background.svg');
   --header-muted: rgba(255, 255, 255, 0.55);
   --header-active: #ffffff;
   --font: 'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', sans-serif;
@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: 'Zurich Bold Condensed';
-  src: url('/Zurich Bold Extended.woff') format('woff');
+  src: url('./assets/Zurich Bold Extended.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;

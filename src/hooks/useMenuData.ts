@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
+import publicUrl from '../publicUrl.ts'
 import type { MenuData } from '../types.ts'
 
 let pending: Promise<MenuData> | null = null
 
 export function loadMenu(): Promise<MenuData> {
   if (!pending) {
-    pending = fetch('/menu.json')
+    pending = fetch(publicUrl('/menu.json'))
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Could not load menu (${response.status})`)

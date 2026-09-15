@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import publicUrl from '../publicUrl.ts'
 
 type Playlist = {
   tracks?: string[]
@@ -45,7 +46,7 @@ function boot() {
   }
   booted = true
 
-  void fetch('/bgm/playlist.json')
+  void fetch(publicUrl('/bgm/playlist.json'))
     .then((response) => {
       if (!response.ok) {
         throw new Error('Could not load playlist')
@@ -77,7 +78,7 @@ function boot() {
         if (!track) {
           return
         }
-        audio.src = track
+        audio.src = publicUrl(track)
         void audio.play().catch(() => {
           for (const eventName of unlockEvents) {
             window.addEventListener(eventName, unlock)

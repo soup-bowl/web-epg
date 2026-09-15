@@ -1,3 +1,5 @@
+import publicUrl from '../publicUrl.ts'
+
 type TabIconProps = {
   icon: string
 }
@@ -22,7 +24,7 @@ function isImageIcon(icon: string) {
 
 export default function TabIcon({ icon }: TabIconProps) {
   if (isImageIcon(icon)) {
-    return <img className="header__tab-icon" src={icon} alt="" />
+    return <img className="header__tab-icon" src={publicUrl(icon)} alt="" />
   }
 
   if (icon === 'tv-guide') {
