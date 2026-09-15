@@ -19,10 +19,11 @@
 }
 
 .menu-item__number {
-  flex: 0 0 2.25rem;
+  flex: 0 0 4.75rem;
   display: flex;
   align-items: center;
-  padding: 0.55rem 1rem 0.55rem 1rem;
+  justify-content: center;
+  padding: 0.18rem 0;
   background: var(--sub-colour);
   color: var(--listnum-colour);
   font-size: 1.6rem;
@@ -38,7 +39,7 @@
 .menu-item__label {
   flex: 1 1 auto;
   min-width: 0;
-  padding: 0.55rem 1rem;
+  padding: 0.18rem 1rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

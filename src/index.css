@@ -37,19 +37,31 @@ body,
   margin: 0;
 }
 
-body {
-  font-family: var(--font);
-  color: var(--font-colour);
+html {
   background-color: var(--bg-color);
 }
 
-.app-shell {
-  min-height: 100%;
+body {
+  font-family: var(--font);
+  color: var(--font-colour);
+  background-color: transparent;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background-color: var(--bg-color);
   background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.app-shell {
+  min-height: 100%;
 }
 
 button {
