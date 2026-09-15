@@ -4,5 +4,6 @@
 	"features": {
 		"ghcr.io/devcontainers/features/node:2": {}
 	},
+	"postCreateCommand": "npm ci",
 	"forwardPorts": [5173]
 }
