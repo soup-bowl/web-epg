@@ -1,0 +1,8 @@
+.menu-list {
+  width: min(100%, 900px);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  outline: none;
+}

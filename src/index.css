@@ -1,0 +1,47 @@
+:root {
+  --bg-color: #6fc4e2;
+  --bg-image: url('/sky-guide-background.svg');
+  --menu-blue: #1c4f9e;
+  --menu-yellow: #f5c400;
+  --text-on-blue: #ffffff;
+  --text-on-yellow: #163a78;
+  --header-muted: rgba(255, 255, 255, 0.55);
+  --header-active: #ffffff;
+  --font: 'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text-on-blue);
+  background-color: var(--bg-color);
+}
+
+.app-shell {
+  min-height: 100%;
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
