@@ -1,0 +1,76 @@
+.link-page__body {
+  background: var(--main-colour);
+  min-height: 5.5rem;
+  max-height: 22vh;
+  padding: 1rem 1.5rem;
+  overflow: auto;
+}
+
+.link-page__description {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.35;
+  text-transform: none;
+  white-space: pre-wrap;
+}
+
+.link-page__banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  min-height: 11rem;
+  margin-top: 0.85rem;
+  padding: 1.5rem 1.25rem;
+  border: 0;
+  background: var(--sub-colour);
+  color: var(--font-colour);
+  cursor: pointer;
+  text-align: center;
+}
+
+.link-page__banner:hover,
+.link-page__banner:focus-visible {
+  background: var(--main-colour-hover);
+  color: var(--font-colour-hover);
+  outline: none;
+}
+
+.link-page__banner-label {
+  font-family: var(--font-menu);
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+}
+
+.link-page__banner-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  font-family: var(--font);
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.link-page__select {
+  padding: 0.12rem 0.55rem;
+  background: var(--main-colour-hover);
+  color: #000;
+  font-family: var(--font-menu);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+}
+
+.link-page__banner:hover .link-page__select,
+.link-page__banner:focus-visible .link-page__select {
+  box-shadow: 0 0 0 2px #000;
+}

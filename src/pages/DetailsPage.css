@@ -1,0 +1,17 @@
+.details-page__body {
+  background: var(--main-colour);
+  height: 75vh;
+  max-height: calc(100vh - 16rem);
+  padding: 1.25rem 1.5rem;
+  overflow: auto;
+}
+
+.details-page__description {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.35;
+  text-transform: none;
+  white-space: pre-wrap;
+}
