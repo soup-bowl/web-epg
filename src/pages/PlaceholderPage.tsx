@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useParams } from 'react-router-dom'
-import type { MenuData } from '../types.ts'
+import { loadMenu } from '../hooks/useMenuData.ts'
 import './PlaceholderPage.css'
 
 type LocationState = {
@@ -20,13 +20,7 @@ export default function PlaceholderPage() {
 
     let cancelled = false
 
-    fetch('/menu.json')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Could not load menu')
-        }
-        return response.json() as Promise<MenuData>
-      })
+    loadMenu()
       .then((data) => {
         const match = data.items.find((item) => item.id === itemId || item.route === `/${itemId}`)
         if (!cancelled && match) {

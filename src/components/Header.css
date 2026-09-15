@@ -53,4 +53,5 @@
 .header__tab-icon {
   width: 2.75rem;
   height: 2.25rem;
+  object-fit: contain;
 }

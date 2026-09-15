@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
-import type { MenuData, MenuItem } from '../types.ts'
+import { loadMenu } from '../hooks/useMenuData.ts'
+import type { MenuItem } from '../types.ts'
 import DetailsPage from './DetailsPage.tsx'
 import LinkPage from './LinkPage.tsx'
 import PlaceholderPage from './PlaceholderPage.tsx'
@@ -42,13 +43,7 @@ export default function ItemRoute() {
 
     let cancelled = false
 
-    fetch('/menu.json')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Could not load menu')
-        }
-        return response.json() as Promise<MenuData>
-      })
+    loadMenu()
       .then((data) => {
         const match = data.items.find((entry) => entry.id === itemId || entry.route === `/${itemId}`)
         if (!cancelled) {

@@ -1,18 +1,31 @@
 type TabIconProps = {
-  id: string
+  icon: string
 }
 
-export default function TabIcon({ id }: TabIconProps) {
-  const common = {
-    className: 'header__tab-icon',
-    viewBox: '0 0 48 40',
-    fill: 'none',
-    stroke: 'currentColor',
-    strokeWidth: 2.2,
-    'aria-hidden': true,
-  } as const
+const common = {
+  className: 'header__tab-icon',
+  viewBox: '0 0 48 40',
+  fill: 'none',
+  stroke: 'currentColor',
+  strokeWidth: 2.2,
+  'aria-hidden': true,
+} as const
 
-  if (id === 'tv-guide') {
+function isImageIcon(icon: string) {
+  return (
+    icon.startsWith('/') ||
+    icon.startsWith('http://') ||
+    icon.startsWith('https://') ||
+    icon.startsWith('data:')
+  )
+}
+
+export default function TabIcon({ icon }: TabIconProps) {
+  if (isImageIcon(icon)) {
+    return <img className="header__tab-icon" src={icon} alt="" />
+  }
+
+  if (icon === 'tv-guide') {
     return (
       <svg {...common}>
         <rect x="6" y="6" width="36" height="24" rx="2" />
@@ -25,7 +38,7 @@ export default function TabIcon({ id }: TabIconProps) {
     )
   }
 
-  if (id === 'box-office') {
+  if (icon === 'box-office') {
     return (
       <svg {...common}>
         <path d="M8 14h32v16H8z" />
@@ -37,7 +50,7 @@ export default function TabIcon({ id }: TabIconProps) {
     )
   }
 
-  if (id === 'services') {
+  if (icon === 'services') {
     return (
       <svg {...common}>
         <rect x="12" y="6" width="24" height="28" rx="1.5" />

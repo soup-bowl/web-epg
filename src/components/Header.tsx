@@ -1,10 +1,12 @@
-import { useState } from 'react'
-import { TABS } from '../tabs.ts'
+import useActiveTab from '../hooks/useActiveTab.ts'
+import useMenuData from '../hooks/useMenuData.ts'
 import TabIcon from './TabIcon.tsx'
 import './Header.css'
 
 export default function Header() {
-  const [activeTabId, setActiveTabId] = useState(TABS[0]?.id ?? '')
+  const { data } = useMenuData()
+  const tabs = data?.tabs ?? []
+  const { activeTabId, setActiveTab } = useActiveTab(tabs, data?.items ?? [])
 
   return (
     <header className="header">
@@ -12,7 +14,7 @@ export default function Header() {
         <img src="/logo.svg" alt="Sky Guide" />
       </div>
       <nav className="header__tabs" aria-label="Guide sections">
-        {TABS.map((tab) => {
+        {tabs.map((tab) => {
           const isActive = tab.id === activeTabId
           return (
             <button
@@ -20,9 +22,9 @@ export default function Header() {
               type="button"
               className={`header__tab${isActive ? ' is-active' : ''}`}
               aria-current={isActive ? 'page' : undefined}
-              onClick={() => setActiveTabId(tab.id)}
+              onClick={() => setActiveTab(tab.id)}
             >
-              <TabIcon id={tab.id} />
+              <TabIcon icon={tab.icon ?? tab.id} />
               <span className="header__tab-label">{tab.label}</span>
             </button>
           )

@@ -1,16 +1,24 @@
 {
+  "tabs": [
+    { "id": "tv-guide", "label": "TV GUIDE", "icon": "tv-guide" },
+    { "id": "box-office", "label": "BOX OFFICE", "icon": "box-office" },
+    { "id": "services", "label": "SERVICES", "icon": "services" },
+    { "id": "interactive", "label": "INTERACTIVE", "icon": "interactive" }
+  ],
   "items": [
     {
       "id": "all-channels",
+      "tab": "tv-guide",
       "number": "1",
       "label": "ALL CHANNELS",
       "route": "/all-channels",
       "description": "This section lists every channel in number order. Use the up and down arrows to move through the list, then press SELECT to view a channel."
     },
-    { "id": "entertainment", "number": "2", "label": "ENTERTAINMENT", "route": "/entertainment" },
-    { "id": "lifestyle-culture", "number": "3", "label": "LIFESTYLE & CULTURE", "route": "/lifestyle-culture" },
+    { "id": "entertainment", "tab": "tv-guide", "number": "2", "label": "ENTERTAINMENT", "route": "/entertainment" },
+    { "id": "lifestyle-culture", "tab": "tv-guide", "number": "3", "label": "LIFESTYLE & CULTURE", "route": "/lifestyle-culture" },
     {
       "id": "movies",
+      "tab": "tv-guide",
       "number": "4",
       "label": "MOVIES",
       "route": "/movies",
@@ -20,11 +28,20 @@
         "route": "/box-office"
       }
     },
-    { "id": "sports", "number": "5", "label": "SPORTS", "route": "/sports" },
-    { "id": "news", "number": "6", "label": "NEWS", "route": "/news" },
-    { "id": "documentaries", "number": "7", "label": "DOCUMENTARIES", "route": "/documentaries" },
-    { "id": "kids", "number": "8", "label": "KIDS", "route": "/kids" },
-    { "id": "music", "number": "9", "label": "MUSIC", "route": "/music" },
-    { "id": "more", "number": "0", "label": "MORE...", "route": "/more" }
+    { "id": "sports", "tab": "tv-guide", "number": "5", "label": "SPORTS", "route": "/sports" },
+    { "id": "news", "tab": "tv-guide", "number": "6", "label": "NEWS", "route": "/news" },
+    { "id": "documentaries", "tab": "tv-guide", "number": "7", "label": "DOCUMENTARIES", "route": "/documentaries" },
+    { "id": "kids", "tab": "tv-guide", "number": "8", "label": "KIDS", "route": "/kids" },
+    { "id": "music", "tab": "tv-guide", "number": "9", "label": "MUSIC", "route": "/music" },
+    { "id": "more", "tab": "tv-guide", "number": "0", "label": "MORE...", "route": "/more" },
+    { "id": "box-office-movies", "tab": "box-office", "number": "1", "label": "MOVIES", "route": "/box-office-movies" },
+    { "id": "box-office-sports", "tab": "box-office", "number": "2", "label": "SPORTS", "route": "/box-office-sports" },
+    { "id": "box-office-events", "tab": "box-office", "number": "3", "label": "EVENTS", "route": "/box-office-events" },
+    { "id": "box-office-adult", "tab": "box-office", "number": "4", "label": "ADULT", "route": "/box-office-adult" },
+    { "id": "system-setup", "tab": "services", "number": "1", "label": "SYSTEM SETUP", "route": "/system-setup" },
+    { "id": "parental-control", "tab": "services", "number": "2", "label": "PARENTAL CONTROL", "route": "/parental-control" },
+    { "id": "system-health", "tab": "services", "number": "3", "label": "SYSTEM HEALTH", "route": "/system-health" },
+    { "id": "interactive-open", "tab": "interactive", "number": "1", "label": "OPEN...", "route": "/interactive-open" },
+    { "id": "interactive-games", "tab": "interactive", "number": "2", "label": "GAMES", "route": "/interactive-games" }
   ]
 }
